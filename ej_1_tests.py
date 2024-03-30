@@ -163,6 +163,23 @@ def test09ArchivoTodosSonIncompatibles(resultadoTests):
     resultadoTests["pasaron"] += 1
 
 
+def test10ArchivoEjemploSimpleDelInforme(resultadoTests):
+    print("══════════════════════════════════════════════")
+    try:
+        filename = "./ej_1_test_files/10.csv"
+        mejorLista, valorMejorLista = mainEjercicio1(filename)
+
+        assert ["Gabriel", "Pedro"] == getNombres(mejorLista)
+        assert 16 == valorMejorLista
+    except:
+        print("No Pasó ❌ Test 10 'test10ArchivoEjemploSimpleDelInforme'")
+        resultadoTests["noPasaron"] += 1
+        return
+
+    print("Pasó ✅ Test 10 'test10ArchivoEjemploSimpleDelInforme'")
+    resultadoTests["pasaron"] += 1
+
+
 if __name__ == "__main__":
     resultadoTests = {"pasaron": 0, "noPasaraon": 0}
 
@@ -175,6 +192,7 @@ if __name__ == "__main__":
     test07Archivo2Influencers(resultadoTests)
     test08ArchivoMuchosInfluencers1ConMuchaIncompatibilidad(resultadoTests)
     test09ArchivoTodosSonIncompatibles(resultadoTests)
+    test10ArchivoEjemploSimpleDelInforme(resultadoTests)
 
     print("══════════════════════════════════════════════")
     print(
