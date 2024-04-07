@@ -16,9 +16,9 @@ def crearListaDeInfluencers(filename):
             listaIncompatibilidades = []
             
             fila_iter = iter(fila)
-            next(fila_iter)
-            next(fila_iter)
-            next(fila_iter)
+            next(fila_iter) # Omitir ID propio
+            next(fila_iter) # Omitir nombre propio
+            next(fila_iter) # Omitir valor propio
             for i in fila_iter:
                 listaIncompatibilidades.append(int(i))
 
