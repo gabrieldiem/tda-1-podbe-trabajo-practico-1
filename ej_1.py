@@ -14,7 +14,12 @@ def crearListaDeInfluencers(filename):
             nombreInfluencer = fila[1]
             valor = int(fila[2])
             listaIncompatibilidades = []
-            for i in fila[3:]:
+            
+            fila_iter = iter(fila)
+            next(fila_iter)
+            next(fila_iter)
+            next(fila_iter)
+            for i in fila_iter:
                 listaIncompatibilidades.append(int(i))
 
             influencer = {
